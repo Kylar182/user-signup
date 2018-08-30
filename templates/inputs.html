@@ -3,38 +3,35 @@
 <html>
     <head>
             <style>
-                div {margin 5px;}
+                .error {color: red}
             </style>
     </head>
 <body>
 
     <h1>Signup</h1>
     <form method='POST'>
-
-        <div>
-        <label>Username
-            <input name="Username" type="text"/>
-        </label>
-        </div>
-
-        <div>
-        <label>Password
-            <input name="user-password" type="password"/>
-        </label>
-        </div>
-
-        <div>
-        <label>Confirm Password
-            <input name="user-password" type="password"/>
-        </label>
-        </div>
-
-        <div>
-        <label>Email
-            <input name="Email (optional)" type="email"/>
-        </label>
-        </div>
-
+        <table>
+            <tr>
+                <td><label>Username</label></td>
+                <td><input name="username" type="text" style="display:inline" value="{{username}}"/></td>
+                <td><span class="error">{{username_error}}</span></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><input name="user_password" type="password" value="{{user_password}}"/></td>
+                <td><span class="error">{{password_error}}</span></td>
+            </tr>
+            <tr>
+                <td><label>Confirm Password</label></td>
+                <td><input name="confirm_password" type="password" value="{{confirm_password}}"/></td>
+                <td><span class="error">{{confirm_error}}</span></td>
+            </tr>
+            <tr>
+                <td><label>Email (Optional)</td>
+                <td><input name="email" type="text"/></td>
+                <td><span class="error">{{email_error}}</span></td>
+            </tr>
+        </table>
         <input type="submit"/>
     </form>
 </body>
